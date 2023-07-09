@@ -1,16 +1,16 @@
 import { Stack } from "expo-router"
 
-const StackLayout = () => {
+const OneLayout = () => {
     return (
         <Stack>
             <Stack.Screen
                 name="index"
                 options={{
-                    headerTitle: 'MBTI'
+                    headerTitle: 'Posting'
                 }}
             />
         </Stack>
     )
 }
 
-export default StackLayout;
+export default OneLayout;
