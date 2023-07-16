@@ -5,7 +5,7 @@ export default () => {
         <Tabs>
             <Tabs.Screen name="post" options={{ headerShown: false }}/>
             <Tabs.Screen name="home" options={{ headerShown: false }}/>
-            <Tabs.Screen name="dictionary"/>
+            <Tabs.Screen name="dictionary" options={{ headerShown: false }}/>
         </Tabs>
     )
 }
