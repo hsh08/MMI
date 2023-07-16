@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     },
     ww: {
         textAlign: 'center',
+        fontWeight: 'bold',
     },
     im: {
         borderWidth: 1,
