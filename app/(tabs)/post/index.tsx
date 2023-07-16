@@ -14,6 +14,12 @@ const PostPage = () => {
             <View>
                 <Text style={styles.np}>새 게시물</Text>
             </View>
+            <View style={styles.con}>
+                <Text style={styles.wr}>사진 넣기</Text>
+                <View style={styles.im}>
+                    <Text style={styles.ww}>여기를 클릭!</Text>
+                </View>
+            </View>
             <View style={styles.tm}>
                 <Text style={styles.wr}>글쓰기</Text>
                 <TextInput
@@ -28,6 +34,20 @@ const PostPage = () => {
 }
 
 const styles = StyleSheet.create({
+    ww: {
+        textAlign: 'center',
+    },
+    im: {
+        borderWidth: 1,
+        width: 250,
+        height: 100,
+    },
+    con: {
+        backgroundColor: 'white',
+        paddingBottom: 10,
+        paddingTop: 10,
+        alignItems: 'center',
+    },
     container: {
         borderWidth: 3,
         paddingBottom: 50,
