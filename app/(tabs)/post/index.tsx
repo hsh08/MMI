@@ -11,9 +11,6 @@ const PostPage = () => {
             <Image
             source={insta} style={styles.image}
             />
-            <View>
-                
-            </View>
         </View>
     
     )
