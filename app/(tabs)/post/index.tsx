@@ -68,8 +68,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     container: {
-        borderWidth: 3,
-        paddingBottom: 50,
         paddingTop: 20,
         backgroundColor: 'black',
     },

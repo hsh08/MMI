@@ -17,7 +17,13 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100 ,
         textAlign: 'center',
-    }
+    },
+    bold: {
+        fontWeight: 'bold',
+    },
+    con: {
+        alignItems: 'center',
+    },
 })
 
 export default styles

@@ -1,6 +1,8 @@
-import { Link, Stack}  from 'expo-router'
-import { View, Text, Button, ScrollView, Image, StyleSheet, TextInput  } from 'react-native';
-import images from '/Users/hansanghyeog/Desktop/Coding/jutest/app/assets/image/Instagram_logo.jpg'
+import { useAssets } from 'expo-asset';
+import { Link, Stack}  from 'expo-router';
+import { Image } from 'expo-image';
+import { View, Text, Button, ScrollView, StyleSheet, TextInput  } from 'react-native';
+import Insta from '../../assets/image/Instagram_logo.jpg'
 
 const HomePage = () => {
     return (
@@ -8,22 +10,26 @@ const HomePage = () => {
             <View style={styles.cont}>
                     <Image
                         style={styles.ima}
-                        source={images}
+                        source={Insta}
                 />
                 <Text style={styles.name}>UserName</Text>
             </View>
             <View style={styles.cont2}>
                 <Image
-                    source={images}
+                    source={Insta}
                     style={styles.im}
                 />
             </View>
             <View style={styles.cont3}>
                 <TextInput
-                style={styles.input}
-                placeholder="댓글 달기"
-                multiline={true}
+                    style={styles.input}
+                    placeholder="댓글 달기"
+                    multiline={true}
                 />
+                <Button
+                    title='게시'
+                /> 
+                {/* 버튼을 누르면 댓글이 저장된다. */}
             </View>
         </ScrollView>
     )
