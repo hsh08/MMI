@@ -97,6 +97,7 @@ const styles = StyleSheet.create({
         borderBottomColor: 'black',
         paddingBottom: 10,
         paddingTop: 10,
+        backgroundColor: 'white',
     },
     tt: {
         fontWeight: 'bold',
