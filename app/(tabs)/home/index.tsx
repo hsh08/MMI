@@ -20,6 +20,8 @@ const HomePage = () => {
                     style={styles.im}
                 />
             </View>
+            <View style={styles.box}></View>
+            {/* 댓글 모이는 box */}
             <View style={styles.cont3}>
                 <TextInput
                     style={styles.input}
@@ -64,7 +66,13 @@ const styles = StyleSheet.create({
     input: {
         width: '100%',
         height: 50,
-    }
+    },
+    box: {
+        borderWidth: 1,
+        width: '100%',
+        height: 100,
+        borderBottomWidth: 0,
+    },
 })
 
 export default HomePage
