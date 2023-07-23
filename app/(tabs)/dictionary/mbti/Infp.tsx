@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
-import React from 'react';
 import Infp from '../../../assets/mbti/infp.png'
 import styles from '../styles'
 

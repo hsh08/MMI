@@ -30,13 +30,21 @@ const PostPage = () => {
                     <Text style={styles.ww}>📸여기를 클릭!📸</Text>
                 </View>
             </View>
-            <View style={styles.tm}>
+            <View style={styles.con}>
                 <Text style={styles.wr}>글쓰기📝</Text>
                 <TextInput
                     style={styles.input}
                     placeholder="나의 이야기 쓰기"
                     multiline={true}
                 />
+            </View>
+            <View style={styles.con}>
+                <Text style={styles.wr}>⚠️조건 정하기⚠️</Text>
+                <Text style={styles.input}>
+                    <Text>
+                        
+                    </Text>
+                </Text>
             </View>
             <View style={styles.but}>
                 <Button
@@ -54,7 +62,6 @@ const styles = StyleSheet.create({
     },
     ww: {
         textAlign: 'center',
-        fontWeight: 'bold',
     },
     im: {
         borderWidth: 1,
@@ -68,7 +75,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     container: {
-        paddingTop: 20,
+        paddingTop: 10,
         backgroundColor: 'black',
     },
     np: {
@@ -77,12 +84,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         backgroundColor: 'black',
-    },
-    tm: {
-        backgroundColor: 'white',
         paddingBottom: 10,
-        paddingTop: 10,
-        alignItems: 'center',
     },
     wr: {
         fontWeight: 'bold',

@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
-import React from 'react';
 import Infj from '../../../assets/mbti/infj.png'
 import styles from '../styles'
 

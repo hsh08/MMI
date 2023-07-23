@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 50,
         borderBottomWidth: 1,
-        borderBottomColor: 'lightgray',
+        borderBottomColor: 'gray',
     },
     box: {
         borderWidth: 1,
