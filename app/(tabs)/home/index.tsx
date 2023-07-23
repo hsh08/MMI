@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     cont3: {
         borderWidth: 1,
         width: '100%',
-        height: 50,
+        height: 80,
     },
     cont: {
         borderWidth: 1,
@@ -66,6 +66,8 @@ const styles = StyleSheet.create({
     input: {
         width: '100%',
         height: 50,
+        borderBottomWidth: 1,
+        borderBottomColor: 'lightgray',
     },
     box: {
         borderWidth: 1,
