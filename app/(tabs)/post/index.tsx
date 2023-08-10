@@ -39,12 +39,12 @@ const PostPage = () => {
                 />
             </View>
             <View style={styles.con}>
-                <Text style={styles.wr}>⚠️조건 정하기⚠️</Text>
-                <Text style={styles.input}>
-                    <Text>
-                        
-                    </Text>
-                </Text>
+                <Text style={styles.wr}>﹟태그﹟</Text>
+                <TextInput
+                    style={styles.input}
+                    placeholder="ex) #여자 #남자 #intp"
+                    multiline={true}
+                />
             </View>
             <View style={styles.but}>
                 <Button
