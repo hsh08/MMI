@@ -8,6 +8,7 @@ export default () => {
             <Tabs.Screen name="home" options={{ headerShown: false }}/>
             <Tabs.Screen name="dictionary" options={{ headerShown: false }}/>
             <Tabs.Screen name="profile" options={{ headerShown: false }}/>
+            <Tabs.Screen name="random" options={{ headerShown: false }}/>
         </Tabs>
     )
 }

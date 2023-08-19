@@ -1,6 +1,5 @@
-import { useAssets } from 'expo-asset';
-import { Link, Stack}  from 'expo-router';
 import { Image } from 'expo-image';
+import { Link } from 'expo-router';
 import { View, Text, Button, ScrollView, StyleSheet, TextInput  } from 'react-native';
 import Insta from '../../assets/image/Instagram_logo.jpg'
 
@@ -20,31 +19,30 @@ const HomePage = () => {
                     style={styles.im}
                 />
             </View>
-            <View style={styles.box}></View>
-            {/* 댓글 모이는 box */}
-            <View style={styles.cont3}>
-                <TextInput
-                    style={styles.input}
-                    placeholder="댓글 달기"
-                    multiline={true}
-                />
-                <Button
-                    title='게시'
-                /> 
-                {/* 버튼을 누르면 댓글이 저장된다. */}
+            <View style={styles.box}>
+                <Text>
+                    
+                </Text>
+            </View>
+            {/* 제목이나 내용, 태그 나오는 box */}
+            <View>
+                <Link href="/sh.tsx">
+                    <Text style={styles.col}>
+                        댓글보기
+                    </Text>
+                </Link>
             </View>
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
+    col: {
+        color: 'gray',
+
+    },
     cont2: {
         alignItems: 'center',
-    },
-    cont3: {
-        borderWidth: 1,
-        width: '100%',
-        height: 80,
     },
     cont: {
         borderWidth: 1,
@@ -63,17 +61,10 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
 
     },
-    input: {
-        width: '100%',
-        height: 50,
-        borderBottomWidth: 1,
-        borderBottomColor: 'gray',
-    },
     box: {
         borderWidth: 1,
         width: '100%',
         height: 100,
-        borderBottomWidth: 0,
     },
 })
 

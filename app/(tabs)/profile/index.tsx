@@ -1,6 +1,7 @@
 import { Link }  from 'expo-router'
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
 import image from '../../assets/image/profile_image.jpg'
+import Insta from '../../assets/image/Instagram_logo.jpg'
 
 const Proage = () => {
     return (
@@ -12,7 +13,7 @@ const Proage = () => {
                         style={styles.image}
                         source={image}
                     />
-                    <View>
+                    <View style={styles.secontainer}>
                         <Text style={styles.text}>Posts</Text>
                         <View style={styles.nc}>
                             <Text style={styles.num}>0</Text>
@@ -34,11 +35,40 @@ const Proage = () => {
                         </Link>
                     </View>
                 </View>
+                <ScrollView style={styles.line}>
+                    <View>
+                        <Image
+                            style={styles.im}
+                            source={Insta}
+                        />       
+                    </View>
+                    <View>
+                        <Image
+                            style={styles.im}
+                            source={Insta}
+                        />
+                    </View>
+                </ScrollView>
         </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
+    im: {
+        width: 170,
+        height: 170,
+    },
+    line: {
+        borderTopWidth: 1,
+        borderColor: "black",
+        flexDirection: 'row',
+    },
+    secontainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 20,
+    },
     btt: {
         color: 'white',
         fontWeight: 'bold',
@@ -51,6 +81,7 @@ const styles = StyleSheet.create({
         paddingLeft: 20,
         paddingRight: 20,
         backgroundColor: 'blue',
+        marginBottom: 10,
     },
     num: {
         color: 'black',
@@ -89,6 +120,7 @@ const styles = StyleSheet.create({
         marginLeft: 20,
         paddingBottom: 10,
         fontWeight: 'bold',
+        paddingRight: 10,
     },
     tt: {
         fontWeight: 'bold',

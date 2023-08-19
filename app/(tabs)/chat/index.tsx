@@ -8,7 +8,7 @@ const ChatPg = () => {
             <View style={styles.Gl}>
                 <Text style={styles.tt}>Mcaht</Text>
             </View>
-            <Link href='/ChatPage/Chage'style={styles.boxs}>
+            <Link href="/ChatPage/Chage"style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
         borderRadius: 100,
     },
     Gl: {
-        borderBottomWidth: 1,
         borderBottomColor: 'black',
         paddingBottom: 10,
         paddingTop: 10,

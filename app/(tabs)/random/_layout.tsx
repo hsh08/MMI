@@ -1,16 +1,16 @@
-import { Stack } from "expo-router";
+import { Stack } from "expo-router"
 
-const StackLayout = () => {
+const DicLayout = () => {
     return (
         <Stack>
             <Stack.Screen
                 name="index"
                 options={{
-                    headerTitle: 'MMI'
+                    headerTitle: 'random'
                 }}
             />
         </Stack>
     )
 }
 
-export default StackLayout;
+export default DicLayout;
