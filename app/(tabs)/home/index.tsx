@@ -21,7 +21,7 @@ const HomePage = () => {
             </View>
             <View style={styles.box}>
                 <Text>
-                    
+
                 </Text>
             </View>
             {/* 제목이나 내용, 태그 나오는 box */}
@@ -32,7 +32,7 @@ const HomePage = () => {
                     </Text>
                 </Link>
             </View>
-        </ScrollView>
+       </ScrollView>
     )
 }
 

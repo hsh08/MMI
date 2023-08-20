@@ -4,7 +4,7 @@ import Login from './app/screens/Login';
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { FIREBASE_AUTH } from "./FirebaseConfig";
-import HomeScreen from './app/(tabs)/home/index';
+import HomeScreen from './app/index';
 
 const Stack = createNativeStackNavigator();
 
