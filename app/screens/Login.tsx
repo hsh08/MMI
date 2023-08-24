@@ -31,7 +31,7 @@ const Login = () => {
             alert('Check your emails!');
         } catch (error: any) {
             console.log(error);
-            alert('Sign in failed: ' + error.message)
+            alert('Sign up failed: ' + error.message)
         } finally {
             setLoading(false);
         }

@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "jutest",
-    "slug": "jutest"
+    "slug": "jutest",
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
