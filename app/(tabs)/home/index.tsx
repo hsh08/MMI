@@ -1,5 +1,6 @@
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
+import React from 'react';
 import { View, Text, Button, ScrollView, StyleSheet, TextInput  } from 'react-native';
 import Insta from '../../assets/image/Instagram_logo.jpg'
 

@@ -8,70 +8,70 @@ const ChatPg = () => {
             <View style={styles.Gl}>
                 <Text style={styles.tt}>Mcaht</Text>
             </View>
-            <Link href="/ChatPage/Chage"style={styles.boxs}>
+            <Link href="/ChatPage/Chage" style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName1
             </Link>
-            <Link href='/ChatPage/Chage2'style={styles.boxs}>
+            <Link href='/ChatPage/Chage2' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName2
             </Link>
-            <Link href='/ChatPage/Chage3'style={styles.boxs}>
+            <Link href='/ChatPage/Chage3' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName3
             </Link>
-            <Link href='/ChatPage/Chage4'style={styles.boxs}>
+            <Link href='/ChatPage/Chage4' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName4
             </Link>
-            <Link href='/ChatPage/Chage5'style={styles.boxs}>
+            <Link href='/ChatPage/Chage5' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName5
             </Link>
-            <Link href='/ChatPage/Chage6'style={styles.boxs}>
+            <Link href='/ChatPage/Chage6' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName6
             </Link>
-            <Link href='/ChatPage/Chage7'style={styles.boxs}>
+            <Link href='/ChatPage/Chage7' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName7
             </Link>
-            <Link href='/ChatPage/Chage8'style={styles.boxs}>
+            <Link href='/ChatPage/Chage8' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName8
             </Link>
-            <Link href='/ChatPage/Chage9'style={styles.boxs}>
+            <Link href='/ChatPage/Chage9' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
                 UserName9
             </Link>
-            <Link href='/ChatPage/Chage10'style={styles.boxs}>
+            <Link href='/ChatPage/Chage10' style={styles.boxs}>
                 <Image
                 style={styles.ima}
                 source = {image}
