@@ -1,7 +1,7 @@
 import { Image } from 'expo-image';
 import { Link } from 'expo-router';
 import React from 'react';
-import { View, Text, Button, ScrollView, StyleSheet, TextInput  } from 'react-native';
+import { View, Text, ScrollView, StyleSheet  } from 'react-native';
 import Insta from '../../assets/image/Instagram_logo.jpg'
 
 const HomePage = () => {
@@ -26,22 +26,11 @@ const HomePage = () => {
                 </Text>
             </View>
             {/* 제목이나 내용, 태그 나오는 box */}
-            <View>
-                <Link href="/sh.tsx">
-                    <Text style={styles.col}>
-                        댓글보기
-                    </Text>
-                </Link>
-            </View>
        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
-    col: {
-        color: 'gray',
-
-    },
     cont2: {
         alignItems: 'center',
     },

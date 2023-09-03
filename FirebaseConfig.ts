@@ -14,5 +14,4 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-export const MBTISNSapp = initializeApp(firebaseConfig);
-export const FIREBASE_AUTH = getAuth(MBTISNSapp);
+export const app = initializeApp(firebaseConfig);

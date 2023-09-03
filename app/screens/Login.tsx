@@ -1,13 +1,48 @@
 import { View, Text, StyleSheet, ActivityIndicator, Button, KeyboardAvoidingView, TextInput } from 'react-native'
-import React, { useState } from 'react'
-import { FIREBASE_AUTH } from '../../FirebaseConfig';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import React, { useEffect, useState } from 'react'
+import { onAuthStateChanged, User, initializeAuth, getAuth, getReactNativePersistence, createUserWithEmailAndPassword, signInWithEmailAndPassword} from 'firebase/auth';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { app } from '../../FirebaseConfig';
+import Home from "../(tabs)/home"
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+import { Slot } from "expo-router";
+
+// home으로 이동하는 app.tsx의 코드를 여기에 추가
+
+const Stack = createNativeStackNavigator();
+const auth = initializeAuth(app, {
+  persistence:getReactNativePersistence(ReactNativeAsyncStorage)
+});
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loading, setLoading] = useState(false);
-    const auth = FIREBASE_AUTH;
+    const [user, setUser] = useState<User | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const auth = getAuth(app);
+
+    useEffect(() => {
+        // Firebase Auth의 상태 변화 감지 등록
+    
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          if (user) {
+            setUser(user); // 로그인 상태
+          } else {
+            setUser(null); // 로그아웃 상태
+          }
+          setIsLoading(false); // 로딩 완료
+        });
+    
+        // 컴포넌트가 언마운트될 때 상태 변화 감지 등록 해제
+        return () => unsubscribe();
+    }, []);
+    
+    if (isLoading) {
+        // 로딩 중이면 로딩 컴포넌트 또는 스플래시 화면 등을 보여줄 수 있습니다.
+        return null;
+    }
 
     const signIn = async () => {
         setLoading(true);
