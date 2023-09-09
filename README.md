@@ -12,3 +12,6 @@ npx create-expo-app -e with-router
 
 - [Expo Router: Docs](https://expo.github.io/router)
 - [Expo Router: Repo](https://github.com/expo/router)
+
+# MY MBTI IS
+자신의 mbti와 관련된 sns 활동을 할 수 있다.
