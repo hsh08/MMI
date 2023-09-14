@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Esfj from '../../../assets/mbti/esfj.png'
 import styles from '../styles'
+import React from 'react';
 
 const esfj = () => {
     return (

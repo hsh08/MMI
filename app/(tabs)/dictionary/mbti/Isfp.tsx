@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Isfp from '../../../assets/mbti/isfp.png'
 import styles from '../styles'
+import React from 'react';
 
 const isfp = () => {
     return (

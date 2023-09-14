@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Entj from '../../../assets/mbti/entj.png'
 import styles from '../styles'
+import React from 'react';
 
 const entj = () => {
     return (

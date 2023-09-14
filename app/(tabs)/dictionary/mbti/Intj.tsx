@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Intj from '../../../assets/mbti/intj.png'
 import styles from '../styles'
+import React from 'react';
 
 const intj = () => {
     return (

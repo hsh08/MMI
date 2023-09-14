@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Infp from '../../../assets/mbti/infp.png'
 import styles from '../styles'
+import React from 'react';
 
 const infp = () => {
     return (

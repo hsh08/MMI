@@ -1,5 +1,6 @@
 import { Link }  from 'expo-router'
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
+import React from 'react';
 import image from '../../assets/image/profile_image.jpg'
 import Insta from '../../assets/image/Instagram_logo.jpg'
 
@@ -18,21 +19,6 @@ const Proage = () => {
                         <View style={styles.nc}>
                             <Text style={styles.num}>0</Text>
                         </View>
-                        <Text style={styles.text}>Follower</Text>
-                        <View style={styles.nc}>
-                            <Text style={styles.num}>0</Text>
-                        </View>
-                        <Text style={styles.text}>Follwing</Text>
-                        <View style={styles.nc}>
-                            <Text style={styles.num}>0</Text>
-                        </View>
-                    </View>
-                    <View style={styles.bc}>
-                        <Link href='../profile/edit'>
-                            <Text style={styles.btt}>
-                                프로필 수정
-                            </Text>
-                        </Link>
                     </View>
                 </View>
                 <ScrollView style={styles.line}>
@@ -64,24 +50,12 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     secontainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
         alignItems: 'center',
         paddingHorizontal: 20,
     },
     btt: {
         color: 'white',
         fontWeight: 'bold',
-    },
-    bc: {
-        borderWidth: 1,
-        borderColor: 'blue',
-        borderRadius: 100,
-        padding: 10,
-        paddingLeft: 20,
-        paddingRight: 20,
-        backgroundColor: 'blue',
-        marginBottom: 10,
     },
     num: {
         color: 'black',

@@ -3,9 +3,9 @@ import React from 'react';
 
 const StackLayout = () => {
     return (
-        <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }}/>
-        </Stack>
+    <Stack>
+        <Stack.Screen name='(tabs)' options={{ headerShown: false }}/>
+    </Stack>
     )
 }
 

@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView, Image } from 'react-native';
 import Istp from '../../../assets/mbti/istp.png'
 import styles from '../styles'
+import React from 'react';
 
 const istp = () => {
     return (
