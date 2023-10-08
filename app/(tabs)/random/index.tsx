@@ -66,14 +66,14 @@ export default function random() {
 
     /** 텍스트 입력 변경 시 호출되며, 변경된 값을 상태로 설정 */
     const handleInputChange = (text) => {
-        setUserInput(text);
+        setUserInput(text.toUpperCase()); // 대문자로 변환하여 설정
     };
 
     const validMBTITypes = ['INTP', 'INTJ', 'INFP', 'INFJ', 'ISTP', 'ISTJ', 'ISFP', 'ISFJ', 'ENTP', 'ENTJ', 'ENFP', 'ENFJ', 'ESTP', 'ESTJ', 'ESFP', 'ESFJ']
 
     /** 버튼 클릭 시 호출되며, 입력된 값을 검증하고 추천 결과 메시지를 설정 */
     const handleFormSubmit = () => {
-        const inputMBTI = userInput.toUpperCase();
+        const inputMBTI = userInput;
 
         if (!validMBTITypes.includes(inputMBTI)) {
             setRecommendedMBTIText('옳지 않은 MBTI 유형입니다.');
@@ -109,32 +109,32 @@ const styles = StyleSheet.create({
 	   flex: 1,
 	   alignItems: 'center',
 	   justifyContent: 'center',
-	   paddingVertical: 20,
-	},
+	    paddingVertical: 20,
+    },
 	title:{
-	   fontSize :24,
-      fontWeight:'bold',
-      marginBottom :20,
-      textAlign:'center'
-   },
+	    fontSize :24,
+        fontWeight:'bold',
+        marginBottom :20,
+        textAlign:'center'
+    },
 	input:{
-      width :'80%',
-      height :40,
-      borderWidth :1 ,
-      borderColor :'gray',
-      borderRadius :5 ,
-      paddingHorizontal :10 ,
-      marginBottom :20 
-   },
+        width :'80%',
+        height :40,
+        borderWidth :1 ,
+        borderColor :'gray',
+        borderRadius :5 ,
+        paddingHorizontal :10 ,
+        marginBottom :20 
+    },
 	recommendation:{
-     fontSize :18,
-     marginTop :20 ,
-     textAlign:'center'
-   },
+        fontSize :18,
+        marginTop :20 ,
+        textAlign:'center'
+    },
    norecommendation:{
-    fontSize:18,
-    marginTop:20,
-    textAlign:'center',
-    color:'red'
-   }
+        fontSize:18,
+        marginTop:20,
+        textAlign:'center',
+        color:'red'
+    }
 });
