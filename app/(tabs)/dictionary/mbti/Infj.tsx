@@ -9,9 +9,11 @@ const infj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>외교관형</Text>
                 <Text style={styles.subtitle}>-옹호자-</Text>
-                <Image
-                source={Infj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Infj} style={styles.image}
+                    /> 
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>차분하고 신비한 분위기를 풍기는 성격으로 다른 사람에게 의욕을 불어넣어 주는 이상주의자</Text>

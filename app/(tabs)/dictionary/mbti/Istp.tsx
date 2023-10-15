@@ -9,9 +9,11 @@ const istp = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>탐험가형</Text>
                 <Text style={styles.subtitle}>-장인-</Text>
-                <Image
-                source={Istp} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Istp} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>대담하면서도 현실적인 성격으로 모든 종류의 도구를 자유자재로 다루는 스타일</Text>

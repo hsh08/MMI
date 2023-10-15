@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
     image: {
         width: 100,
         height: 100 ,
-        textAlign: 'center',
     },
     bold: {
         fontWeight: 'bold',
@@ -24,6 +23,9 @@ const styles = StyleSheet.create({
     con: {
         alignItems: 'center',
     },
+    vi: {
+        alignItems: 'center'
+    }
 })
 
 export default styles

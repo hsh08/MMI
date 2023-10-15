@@ -9,9 +9,11 @@ const estp = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>탐험가형</Text>
                 <Text style={styles.subtitle}>-사업가-</Text>
-                <Image
-                source={Estp} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Estp} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>위험을 기꺼이 감수하는 성격으로 영리하고 에너지 넘치며 관찰력이 뛰어난 사업가</Text>

@@ -9,9 +9,11 @@ const esfj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>관리자형</Text>
                 <Text style={styles.subtitle}>-집정관-</Text>
-                <Image
-                source={Esfj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Esfj} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>  
                     <Text>배려심이 넘치고 항상 다른 사람을 도울 준비가 되어 있는 성격으로 인기가 많고 사교성 높은 마당발</Text>

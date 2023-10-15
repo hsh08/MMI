@@ -9,9 +9,11 @@ const isfj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>관리자형</Text>
                 <Text style={styles.subtitle}>-수호자-</Text>
-                <Image
-                source={Isfj} style={styles.image}
-                />
+                <View>
+                   <Image
+                        source={Isfj} style={styles.image}
+                    /> 
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>주변사람을 보호할 준비가 되어 있는 헌신적이고 따뜻한 스타일</Text>

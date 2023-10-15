@@ -9,9 +9,11 @@ const istj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>관리자형</Text>
                 <Text style={styles.subtitle}>-현실주의자-</Text>
-                <Image
-                source={Istj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Istj} style={styles.image}
+                    /> 
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>사상을 중시하는 믿음직한 현실주의자</Text>

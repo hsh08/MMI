@@ -9,9 +9,11 @@ const estj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>관리자형</Text>
                 <Text style={styles.subtitle}>-경영자-</Text>
-                <Image
-                source={Estj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Estj} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>사물과 사람을 관리하는 데 뛰어난 능력을 가진 경영자</Text>

@@ -9,9 +9,11 @@ const enfj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>외교관형</Text>
                 <Text style={styles.subtitle}>-선도자-</Text>
-                <Image
-                source={Enfj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Enfj} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>청중을 사로잡고 의욕을 불어넣는 카리스마 넘치는 지도자</Text>

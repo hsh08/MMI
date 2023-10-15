@@ -9,9 +9,11 @@ const intj = () => {
             <View style={styles.container}>
                 <Text style={styles.title}>분석가형</Text>
                 <Text style={styles.subtitle}>-전략가-</Text>
-                <Image
-                source={Intj} style={styles.image}
-                />
+                <View style={styles.vi}>
+                    <Image
+                        source={Intj} style={styles.image}
+                    />
+                </View>
                 <View style={styles.con}>
                     <Text style={styles.bold}>유형</Text>
                     <Text>모든 일에 대해 계획을 세우며 상상력이 풍부한 전략가</Text>
