@@ -2,7 +2,7 @@ import { Link }  from 'expo-router'
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
 import React from 'react';
 import image from '../../assets/image/profile_image.jpg'
-import Insta from '../../assets/image/Instagram_logo.jpg'
+import heart from '../../assets/image/heart.jpg'
 
 const Proage = () => {
     return (
@@ -25,13 +25,13 @@ const Proage = () => {
                     <View>
                         <Image
                             style={styles.im}
-                            source={Insta}
+                            source={heart}
                         />       
                     </View>
                     <View>
                         <Image
                             style={styles.im}
-                            source={Insta}
+                            source={heart}
                         />
                     </View>
                 </ScrollView>
