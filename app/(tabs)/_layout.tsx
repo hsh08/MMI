@@ -14,7 +14,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <Entypo name="book" size={24} color="black" />
                     ),
-                    headerShown: false 
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
             <Tabs.Screen
@@ -23,7 +24,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <AntDesign name="pluscircle" size={24} color="black" />
                     ),
-                    headerShown: false 
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
             <Tabs.Screen 
@@ -32,7 +34,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <Entypo name="home" size={24} color="black" />
                     ),
-                    headerShown: false
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
             <Tabs.Screen 
@@ -41,7 +44,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <FontAwesome5 name="dice" size={24} color="black" />
                     ),
-                    headerShown: false 
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
             <Tabs.Screen 
@@ -50,7 +54,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <Entypo name="chat" size={24} color="black" />
                     ),
-                    headerShown: false 
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
             <Tabs.Screen 
@@ -59,7 +64,8 @@ export default () => {
                     tabBarIcon: ({color, size}) => (
                         <Ionicons name="person-circle-sharp" size={24} color="black" />
                     ),
-                    headerShown: false 
+                    headerShown: false,
+                    tabBarLabel: "" // 이름을 비워줍니다.
                 }}
             />
         </Tabs>
