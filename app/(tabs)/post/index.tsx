@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Stack}  from 'expo-router'
 import { View,
         Image,
@@ -8,8 +8,45 @@ import { View,
         TextInput,
         Button,
 } from 'react-native';
+import * as Filesystem from 'expo-file-system';
+import * as ImagePicker from 'expo-image-picker';
+
+
+const imgDir = Filesystem.documentDirectory + 'images/';
+
+const ensureDirExists = async () => {
+    const dirInfo = await FileSystem.getInfoAsync(imgDir);
+    if (!dirInfo.exists) {
+        await FileSystem.makeDirectoryAsync( imgDir, { intermediates: true } );
+    }
+}
 
 const PostPage = () => {
+
+    const selectImage = async (useLibrary: boolean) => {
+        let result;
+        
+        if (useLibrary) {
+            result =  await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.Images,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 0.75
+            });
+        } else {
+            await ImagePicker.requestCameraPermissionsAsync();
+            result = await ImagePicker.launchCameraAsync({
+                mediaTypes: ImagePicker.MediaTypeOptions.Images,
+                allowsEditing: true,
+                aspect: [4, 3],
+                quality: 0.75
+            });
+        }
+
+        if (!result.canceled) {
+            console.log(result.uri);
+        }
+    };
     return (
         <View style={styles.container}>
             <View>
@@ -25,9 +62,9 @@ const PostPage = () => {
             </View>
             <View style={styles.con}>
                 <Text style={styles.wr}>사진 넣기</Text> 
-                {/* 사진을 넣을 수 있게 구현 */}
                 <View style={styles.im}>
-                    <Text style={styles.ww}>📸여기를 클릭!📸</Text>
+                    <Button title="Photo Library" onPress={() => selectImage(true)} />
+                    <Button title="Capture Image" onPress={() => selectImage(false)} />
                 </View>
             </View>
             <View style={styles.con}>
@@ -35,14 +72,6 @@ const PostPage = () => {
                 <TextInput
                     style={styles.input}
                     placeholder="나의 이야기 쓰기"
-                    multiline={true}
-                />
-            </View>
-            <View style={styles.con}>
-                <Text style={styles.wr}>﹟태그﹟</Text>
-                <TextInput
-                    style={styles.input}
-                    placeholder="ex) #여자 #남자 #intp"
                     multiline={true}
                 />
             </View>
