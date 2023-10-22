@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, Stack}  from 'expo-router'
 import { View,
         Image,
@@ -7,12 +7,14 @@ import { View,
         ScrollView,
         TextInput,
         Button,
+        FlatList,
 } from 'react-native';
-import * as Filesystem from 'expo-file-system';
+import * as FileSystem from 'expo-file-system';
 import * as ImagePicker from 'expo-image-picker';
+import { Ionicons } from '@expo/vector-icons';
 
 
-const imgDir = Filesystem.documentDirectory + 'images/';
+const imgDir = FileSystem.documentDirectory + 'images/';
 
 const ensureDirExists = async () => {
     const dirInfo = await FileSystem.getInfoAsync(imgDir);
@@ -21,11 +23,25 @@ const ensureDirExists = async () => {
     }
 }
 
-const PostPage = () => {
+export default function PostPage() {
+    const [images, setImages] = useState<string[]>([]);
+    // const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        loadImages();
+    }, []);
+
+    const loadImages = async () => { 
+        await ensureDirExists(); 
+        const files = await FileSystem.readDirectoryAsync(imgDir);
+        if (files.length > 0) {
+            setImages(files.map(f => imgDir + f));
+        }
+    };
 
     const selectImage = async (useLibrary: boolean) => {
         let result;
-        
+
         if (useLibrary) {
             result =  await ImagePicker.launchImageLibraryAsync({
                 mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -44,9 +60,35 @@ const PostPage = () => {
         }
 
         if (!result.canceled) {
-            console.log(result.uri);
+            saveImage(result.assets[0].uri);
         }
     };
+
+    const saveImage = async (uri: string) => {
+        await ensureDirExists();
+        const filename = new Date().getTime() + '.jpg';
+        const dest = imgDir + filename;
+        await FileSystem.copyAsync({ from: uri, to: dest });
+        setImages([...images, dest]);
+    };
+
+    const deleteImage = async (uri:string) => {
+        await FileSystem.deleteAsync(uri);
+        setImages(images.filter((i) => i !== uri));
+    }
+
+    const renderItem = ({ item }: { item: string }) => {
+        const filename = item.split('/').pop();
+        
+        return (
+            <View style={{ flexDirection: 'row', margin: 1, alignItems: 'center', gap: 5 }}>
+                <Image source={{uri: item}} style={{ width: 100, height: 100 }} /> 
+                <Text style={{flex: 1}}>{filename}</Text>
+                <Ionicons.Button name="trash" onPress={() => deleteImage(item)} />
+            </View>
+        )
+    };
+
     return (
         <View style={styles.container}>
             <View>
@@ -64,7 +106,7 @@ const PostPage = () => {
                 <Text style={styles.wr}>사진 넣기</Text> 
                 <View style={styles.im}>
                     <Button title="Photo Library" onPress={() => selectImage(true)} />
-                    <Button title="Capture Image" onPress={() => selectImage(false)} />
+                    <FlatList data={images} renderItem={renderItem}/> 
                 </View>
             </View>
             <View style={styles.con}>
@@ -78,6 +120,7 @@ const PostPage = () => {
             <View style={styles.but}>
                 <Button
                     title='올리기'
+                    // onPress={} // ???????? 어캐 하누 ㅠㅠ
                 />
             </View>
         </View>
@@ -85,6 +128,10 @@ const PostPage = () => {
 }
 
 const styles = StyleSheet.create({
+    image: {
+        width: 250,
+        height: 300,
+    },
     but: {
         backgroundColor: 'lightgray',
     },
@@ -94,7 +141,7 @@ const styles = StyleSheet.create({
     im: {
         borderWidth: 1,
         width: 250,
-        height: 100,
+        height: 300,
     },
     con: {
         backgroundColor: 'white',
@@ -130,5 +177,3 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
 });
-
-export default PostPage
