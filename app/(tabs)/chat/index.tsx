@@ -9,7 +9,7 @@ const ChatPg = () => {
             <View style={styles.Gl}>
                 <Text style={styles.tt}>Mcaht</Text>
             </View>
-            <Link href="/ChatPage/Chage" style={styles.boxs}>
+            <Link href="/chat/ChatPage/Chage" style={styles.boxs} >
                 <Image
                 style={styles.ima}
                 source = {image}
