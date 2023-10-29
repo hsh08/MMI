@@ -101,7 +101,9 @@ const styles = StyleSheet.create({
         width: '50%',
         aspectRatio:'1 / 1',
         alignItems:'center',
-        backgroundColor: 'lightpink',
+        backgroundColor: 'white',
+        borderColor: 'blue',
+        borderWidth: 1,
     },
     all: {
         flex:1,
