@@ -25,7 +25,8 @@ const ensureDirExists = async () => {
 
 export default function PostPage() {
     const [images, setImages] = useState<string[]>([]);
-    // const [loading, setLoading] = useState(true);
+    const [title, setTitle] = useState('');
+    const [detail, setDetail] = useState('');
 
     useEffect(() => {
         loadImages();
@@ -39,25 +40,13 @@ export default function PostPage() {
         }
     };
 
-    const selectImage = async (useLibrary: boolean) => {
-        let result;
-
-        if (useLibrary) {
-            result =  await ImagePicker.launchImageLibraryAsync({
-                mediaTypes: ImagePicker.MediaTypeOptions.Images,
-                allowsEditing: true,
-                aspect: [4, 3],
-                quality: 0.75
-            });
-        } else {
-            await ImagePicker.requestCameraPermissionsAsync();
-            result = await ImagePicker.launchCameraAsync({
-                mediaTypes: ImagePicker.MediaTypeOptions.Images,
-                allowsEditing: true,
-                aspect: [4, 3],
-                quality: 0.75
-            });
-        }
+    const selectImage = async () => {
+        const result =  await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 0.75
+        });
 
         if (!result.canceled) {
             saveImage(result.assets[0].uri);
@@ -69,11 +58,16 @@ export default function PostPage() {
         const filename = new Date().getTime() + '.jpg';
         const dest = imgDir + filename;
         await FileSystem.copyAsync({ from: uri, to: dest });
-        setImages([...images, dest]);
+        // setImages([...images, dest]);
+
+        // Read the image file and convert it to a base64 string
+        const base64Data = await FileSystem.readAsStringAsync(dest, { encoding: 'base64' });
+
+        setImages([...images, base64Data]);
     };
 
     const deleteImage = async (uri:string) => {
-        await FileSystem.deleteAsync(uri);
+        // await FileSystem.deleteAsync(uri);
         setImages(images.filter((i) => i !== uri));
     }
 
@@ -82,12 +76,44 @@ export default function PostPage() {
         
         return (
             <View style={{ flexDirection: 'row', margin: 1, alignItems: 'center', gap: 5 }}>
-                <Image source={{uri: item}} style={{ width: 100, height: 100 }} /> 
+                <Image source={{uri: 'data:image/jpeg;base64,' + item}} style={{ width: 100, height: 100 }} /> 
                 <Text style={{flex: 1}}>{filename}</Text>
                 <Ionicons.Button name="trash" onPress={() => deleteImage(item)} />
             </View>
         )
     };
+
+    const createPost = async () => {
+        try {
+            const response = await fetch('http://localhost:3000/posts', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title,
+                    detail,
+                    images   // This is now an array of base64 strings
+                })
+            });
+    
+            if (!response.ok) {
+                throw new Error('Failed to create post');
+            }
+    
+            const data = await response.json();
+            
+            console.log('Post created successfully', data.postId);
+
+            // Clear the input fields and image data after successful post creation
+            setTitle('');
+            setDetail('');
+            setImages([]);
+
+        } catch (error) {
+            console.error(error);
+        }
+    };    
 
     return (
         <View style={styles.container}>
@@ -97,6 +123,8 @@ export default function PostPage() {
             <View style={styles.con}>
                 <Text style={styles.wr}>제목</Text>
                 <TextInput
+                    value={title}
+                    onChangeText={(text) => setTitle(text)}
                     style={styles.input2}
                     placeholder="제목 쓰기"
                     multiline={true}
@@ -105,13 +133,15 @@ export default function PostPage() {
             <View style={styles.con}>
                 <Text style={styles.wr}>사진 넣기</Text> 
                 <View style={styles.im}>
-                    <Button title="Photo Library" onPress={() => selectImage(true)} />
+                    <Button title="Photo Library" onPress={selectImage} />
                     <FlatList data={images} renderItem={renderItem}/> 
                 </View>
             </View>
             <View style={styles.con}>
                 <Text style={styles.wr}>글쓰기📝</Text>
                 <TextInput
+                    value={detail}
+                    onChangeText={(text) => setDetail(text)}
                     style={styles.input}
                     placeholder="나의 이야기 쓰기"
                     multiline={true}
@@ -120,7 +150,7 @@ export default function PostPage() {
             <View style={styles.but}>
                 <Button
                     title='올리기'
-                    // onPress={} // ???????? 어캐 하누 ㅠㅠ
+                    onPress={createPost}
                 />
             </View>
         </View>
