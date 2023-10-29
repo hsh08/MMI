@@ -1,14 +1,23 @@
 import { Link }  from 'expo-router'
 import { View, Text, Button, StyleSheet, ScrollView, Image } from 'react-native';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import image from '../../assets/image/profile_image.jpg'
 import heart from '../../assets/image/heart.jpg'
 
 const Proage = () => {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/user')
+            .then(response => response.json())
+            .then(data => setUser(data))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
         <ScrollView style={styles.container}>
-                <Text style={styles.bt}>UserName</Text>
-                <Text style={styles.tt}>mbti</Text>
+                <Text style={styles.bt}>{user ? user.username : 'Loading...'}</Text>
+                <Text style={styles.tt}>{user ? user.mbti : 'Loading...'}</Text>
                 <View style={styles.ob}>
                     <Image
                         style={styles.image}
@@ -17,7 +26,7 @@ const Proage = () => {
                     <View style={styles.secontainer}>
                         <Text style={styles.text}>Posts</Text>
                         <View style={styles.nc}>
-                            <Text style={styles.num}>0</Text>
+                            <Text style={styles.num}>2</Text>
                         </View>
                     </View>
                 </View>
@@ -25,7 +34,7 @@ const Proage = () => {
                     <View>
                         <Image
                             style={styles.im}
-                            source={heart}
+                            source={image}
                         />       
                     </View>
                     <View>
@@ -101,6 +110,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         marginBottom: 10,
         textAlign: 'center',
+        color: 'blue',
     },
 })
 
