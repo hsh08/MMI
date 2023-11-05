@@ -31,7 +31,7 @@ const Chage = () => {
         <Text style={styles.title}>Chat</Text>
       </View>
       <View style={styles.fake}>
-        <Text style={styles.ft}>Hi, my name is HanSangHyuk</Text>
+        {/* <Text style={styles.ft}>Hi, my name is HanSangHyuk</Text> */}
       </View>
       <View style={styles.container}>
         <View style={styles.inputContainer}>
