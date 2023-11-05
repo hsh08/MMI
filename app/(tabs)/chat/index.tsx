@@ -9,12 +9,21 @@ const ChatPg = () => {
             <View style={styles.Gl}>
                 <Text style={styles.tt}>Mcaht</Text>
             </View>
-            <Link href="/chat/ChatPage/Chage" style={styles.boxs} >
+            <Link href="/chat/ChatPage/Chage_A" style={styles.boxs} >
                 <Image
                 style={styles.ima}
                 source = {image}
                 />
-                UserName1
+                HanSangHyuk
+            <Text style={styles.mbti}>ENFJ</Text>
+            </Link>
+            <Link href="/chat/ChatPage/Chage_B" style={styles.boxs} >
+                <Image
+                style={styles.ima}
+                source = {image}
+                />
+                Juliet
+            <Text style={styles.mbti}>INFJ</Text>
             </Link>
         </ScrollView>
         
@@ -51,7 +60,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         color: 'black',
         fontWeight: 'bold',
-    }
+    },
+    mbti: {
+        color: "blue",
+    },
 })
 
 export default ChatPg;

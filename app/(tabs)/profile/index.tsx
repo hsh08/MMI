@@ -8,7 +8,7 @@ const Proage = () => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/user')
+        fetch('http://localhost:3000/users')
             .then(response => response.json())
             .then(data => setUser(data))
             .catch(error => console.error(error));

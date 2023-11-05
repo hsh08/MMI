@@ -15,7 +15,7 @@ export default () => {
                         <Entypo name="book" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
             <Tabs.Screen
@@ -25,7 +25,7 @@ export default () => {
                         <AntDesign name="pluscircle" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
             <Tabs.Screen 
@@ -35,7 +35,7 @@ export default () => {
                         <Entypo name="home" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
             <Tabs.Screen 
@@ -45,7 +45,7 @@ export default () => {
                         <FontAwesome5 name="dice" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
             <Tabs.Screen 
@@ -55,7 +55,7 @@ export default () => {
                         <Entypo name="chat" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
             <Tabs.Screen 
@@ -65,7 +65,7 @@ export default () => {
                         <Ionicons name="person-circle-sharp" size={24} color="black" />
                     ),
                     headerShown: false,
-                    tabBarLabel: "" // 이름을 비워줍니다.
+                    tabBarLabel: ""
                 }}
             />
         </Tabs>

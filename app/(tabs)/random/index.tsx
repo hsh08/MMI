@@ -1,5 +1,5 @@
 import { View, Text, Button, ScrollView, StyleSheet, TextInput  } from 'react-native';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 /** 각 mbti별 호감 */
 const likes = {
@@ -60,9 +60,49 @@ function recommendMBTI(inputType:string): string | null {
     return null; // 입력된 MBTI 유형에 대한 추천이 없을 경우 null 반환
 }
 
+// function recommendMBTI(inputType: string): string | null {
+//     if (likes[inputType]) {
+//       const recommendedType =
+//         likes[inputType][Math.floor(Math.random() * likes[inputType].length)];
+  
+//       // 추천된 MBTI 유형에 해당하는 사용자 찾기
+//       const recommendedUser = seedUsers.find(user => user.mbti === recommendedType);
+//       if (recommendedUser) {
+//         return recommendedUser.username;
+//       }
+//     } else if (dislikes[inputType]) {
+//       const filteredLikes = Object.keys(likes).filter(
+//         type => !dislikes[inputType].includes(type)
+//       );
+//       if (filteredLikes.length > 0) {
+//         const recommendedType =
+//           filteredLikes[Math.floor(Math.random() * filteredLikes.length)];
+  
+//         // 추천된 MBTI 유형에 해당하는 사용자 찾기
+//         const recommendedUser = seedUsers.find(user => user.mbti === recommendedType);
+//         if (recommendedUser) {
+//           return recommendedUser.username;
+//         }
+//       }
+//     }
+//     return null;
+// }  
+
 export default function random() {
     const [userInput, setUserInput] = useState('');  //사용자가 입력하는 텍스트 값을 저장
 	const [recommendedMBTIText, setRecommendedMBTIText] = useState(''); // 추천 받은 결과 메시지를 저장
+
+
+    // useEffect(() => {
+    //     fetch('http://localhost:3000/users') // 서버 주소에 맞게 변경해 주세요
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         setSeedUsers(data);
+    //     })
+    //     .catch(error => {
+    //         console.error('Error fetching users', error);
+    //     });
+    // }, []);
 
     /** 텍스트 입력 변경 시 호출되며, 변경된 값을 상태로 설정 */
     const handleInputChange = (text) => {
@@ -83,6 +123,22 @@ export default function random() {
         const recommendedMBTI = recommendMBTI(inputMBTI);
         setRecommendedMBTIText(recommendedMBTI);
     };
+
+    // const handleFormSubmit = () => {
+    //     const inputMBTI = userInput;
+      
+    //     if (!validMBTITypes.includes(inputMBTI)) {
+    //       setRecommendedMBTIText('옳지 않은 MBTI 유형입니다.');
+    //       return;
+    //     }
+      
+    //     const recommendedMBTI = recommendMBTI(inputMBTI);
+    //     if (recommendedMBTI) {
+    //       setRecommendedMBTIText(`${recommendedMBTI}을(를) 추천합니다.`);
+    //     } else {
+    //       setRecommendedMBTIText('입력된 MBTI 유형에 대한 추천이 없습니다.');
+    //     }
+    //   };
 
     return (
         <View style={styles.container}>
@@ -138,3 +194,7 @@ const styles = StyleSheet.create({
         color:'red'
     }
 });
+
+function setSeedUsers(data: any) {
+    throw new Error('Function not implemented.');
+}

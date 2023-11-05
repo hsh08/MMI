@@ -46,8 +46,8 @@ const HomePage = () => {
             setLoading(true);
             
             try {
-                // const response = await fetch(`http://192.168.68.51:3000/posts?page=${page}`);
-                const response = await fetch(`http://localhost:3000/posts?page=${page}`);
+                const response = await fetch(`http://192.168.68.51:3000/posts?page=${page}`);
+                // const response = await fetch(`http://localhost:3000/posts?page=${page}`);
 
     
                 if (!response.ok) {
